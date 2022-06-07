@@ -2,26 +2,23 @@
   <div id="app">
 
     <BaseHeader/>
+    <BaseMain/>
 
   </div>
 </template>
 
 <script>
 import BaseHeader from './components/BaseHeader.vue'
+import BaseMain from './components/BaseMain.vue'
 
 export default {
   name: 'App',
   components: {
     BaseHeader,
+    BaseMain,
   }
 }
 </script>
 
-<style lang="scss">
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<style lang="scss" scoped>
 </style>
