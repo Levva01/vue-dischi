@@ -9,16 +9,22 @@
 
 <script>
 import axios from 'axios';
+import SelectInput from '../components/SelectInput.vue';
 import CardMusic from '../components/CardMusic.vue';
+
+import dataShared from '../shared/dataShared';
+
 export default {
     name: 'SelectionAlbum',
     data() {
         return {
+            dataShared,
             musics: [],
         };
     },
     components: {
         CardMusic,
+        SelectInput,
     },
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -30,6 +36,17 @@ export default {
             // handle error
             console.log(error);
         });
+    },
+    methods: {
+        filterGenre(dataShared) {
+            this.dataShared = dataShared;
+        }
+    },
+    computed: {
+        genreFiltered() {
+            return this.dataShared.filter((elm) => { 
+            });
+        }
     }
 }
 </script>
