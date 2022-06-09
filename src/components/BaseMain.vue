@@ -1,7 +1,6 @@
 <template>
 
     <main>
-        <SelectInput/>
         <SectionAlbum/>
 
     </main>
@@ -10,13 +9,11 @@
 
 
 <script>
-import SelectInput from './SelectInput.vue';
 import SectionAlbum from '../components/SectionAlbum.vue';
 
 export default {
     name: 'BaseMain',
     components: {
-        SelectInput,
         SectionAlbum,
 
     },

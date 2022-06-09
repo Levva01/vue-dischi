@@ -1,7 +1,8 @@
 <template>
   <section>
+        <SelectInput/>
         <div class="albums-container">
-            <CardMusic  v-for="music in musics" :key="music.id" :music="music"/>
+            <CardMusic  v-for="music in filterMusic" :key="music.id" :music="music"/>
         </div>
           
   </section>
@@ -18,8 +19,8 @@ export default {
     name: 'SelectionAlbum',
     data() {
         return {
-            dataShared,
             musics: [],
+            dataShared,
         };
     },
     components: {
@@ -37,15 +38,9 @@ export default {
             console.log(error);
         });
     },
-    methods: {
-        filterGenre(dataShared) {
-            this.dataShared = dataShared;
-        }
-    },
     computed: {
-        genreFiltered() {
-            return this.dataShared.filter((elm) => { 
-            });
+        filterMusic() {
+            return this.musics.filter((elm) => elm.genre === this.dataShared.value || this.dataShared.value === 'All'); 
         }
     }
 }

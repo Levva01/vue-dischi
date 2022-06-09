@@ -1,6 +1,6 @@
 <template>
 
-    <select name="genre" id="genre">
+    <select name="album" id="genere" v-model="select.value">
         <option value="">All</option>
         <option value="Rock">Rock</option>
         <option value="Pop">Pop</option>
